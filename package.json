@@ -1,0 +1,106 @@
+{
+  "name": "@lpm.dev/neo.diff",
+  "version": "1.0.0",
+  "description": "Modern, tree-shakeable diff library - 70% smaller than diff, multiple algorithms, TypeScript-native",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./myers": {
+      "types": "./dist/core/myers.d.ts",
+      "import": "./dist/core/myers.js",
+      "require": "./dist/core/myers.cjs"
+    },
+    "./patience": {
+      "types": "./dist/core/patience.d.ts",
+      "import": "./dist/core/patience.js",
+      "require": "./dist/core/patience.cjs"
+    },
+    "./text": {
+      "types": "./dist/text/index.d.ts",
+      "import": "./dist/text/index.js",
+      "require": "./dist/text/index.cjs"
+    },
+    "./structured": {
+      "types": "./dist/structured/index.d.ts",
+      "import": "./dist/structured/index.js",
+      "require": "./dist/structured/index.cjs"
+    },
+    "./patch": {
+      "types": "./dist/patch/index.d.ts",
+      "import": "./dist/patch/index.js",
+      "require": "./dist/patch/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    ".lpm",
+    "README.md",
+    "MIGRATION.md",
+    "PERFORMANCE.md",
+    "BENCHMARKS.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "bench": "vitest bench --run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm run test"
+  },
+  "keywords": [
+    "diff",
+    "myers",
+    "patience",
+    "patch",
+    "unified-diff",
+    "line-diff",
+    "word-diff",
+    "char-diff",
+    "json-diff",
+    "array-diff",
+    "object-diff",
+    "git-diff",
+    "diff-match-patch",
+    "fast-diff",
+    "tree-shakeable",
+    "typescript",
+    "zero-dependency"
+  ],
+  "author": "neo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ne-ooo/neo.diff"
+  },
+  "bugs": {
+    "url": "https://github.com/ne-ooo/neo.diff/issues"
+  },
+  "homepage": "https://github.com/ne-ooo/neo.diff#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@vitest/coverage-v8": "^1.2.0",
+    "diff": "^8.0.3",
+    "fast-diff": "^1.3.0",
+    "microdiff": "^1.5.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
